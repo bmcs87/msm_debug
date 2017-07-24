@@ -2,7 +2,8 @@ class RolesController < ApplicationController
   def index
     @roles = Role.all
   end
-
+  
+  #test
   def show
     @role = Role.find(params[:id])
   end

@@ -11,6 +11,8 @@ class MoviesController < ApplicationController
   end
 
   def create_row
+    @movie = Movie.new
+    
     @movie.title = params[:title]
     @movie.year = params[:year]
     @movie.duration = params[:duration]
@@ -20,7 +22,7 @@ class MoviesController < ApplicationController
 
     @movie.save
 
-    render("show")
+    render("movies/show.html.erb")
   end
 
   def edit_form
@@ -37,7 +39,7 @@ class MoviesController < ApplicationController
     @movie.image_url = params[:image_url]
     @movie.director_id = params[:director_id]
 
-    render("show")
+    render("movies/show.html.erb")
   end
 
   def destroy
